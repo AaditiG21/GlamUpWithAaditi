@@ -4,7 +4,7 @@
  */
 package com.cosmetic.util;
 
-import java.util.regex.Pattern;
+import java.util.regex.Pattern; 
 
 /**
  * LMUID: 23048679
@@ -13,29 +13,37 @@ import java.util.regex.Pattern;
 
 
 public class ValidationUtil {
-    private static final Pattern  MID_PATTERN = Pattern.compile("^1\\d{3}$");
-    private static final Pattern MNAME_PATTERN = Pattern.compile("^[a-zA-Z]+[ a-zA-Z]*$");
-    private static final Pattern MSHADE_PATTERN = Pattern.compile("^[a-zA-Z]+[ a-zA-Z]*$", Pattern.CASE_INSENSITIVE);
-    private static final Pattern MQUANTITY_PATTERN = Pattern.compile("^\\d{1}$");
-    private static final Pattern MBRAND_PATTERN = Pattern.compile("^[a-zA-Z]+[ a-zA-Z]*$", Pattern.CASE_INSENSITIVE);
-    private static final Pattern MPRICE_PATTERN = Pattern.compile("^\\d{4}$");
-    private static final Pattern MINGREDIENTS_PATTERN = Pattern.compile("^[a-zA-Z]+[ a-zA-Z]*$", Pattern.CASE_INSENSITIVE);
-    private static final Pattern MMFGDATE_PATTERN = Pattern.compile("^\\d{4}\\s+(January|February|March|April|May|June|July|August|September|October|November|December)$");
-    private static final Pattern MEXPDATE_PATTERN = Pattern.compile("^\\d{4}\\s+(January|February|March|April|May|June|July|August|September|October|November|December)$");;
+    private static final Pattern  MID_PATTERN = Pattern.compile("^1\\d{3}$"); //the digit should start with 1 and if followed by 3 digits
+    private static final Pattern MNAME_PATTERN = Pattern.compile("^[a-zA-Z]+[ a-zA-Z]*$"); //starts with any alphabetic order a-z or A-Z and should only contains space
+    private static final Pattern MSHADE_PATTERN = Pattern.compile("^[a-zA-Z]+[ a-zA-Z]*$", Pattern.CASE_INSENSITIVE);//starts with any alphabetic order a-z or A-Z and should only contains space
+    private static final Pattern MQUANTITY_PATTERN = Pattern.compile("^\\d{1}$"); //one digit only
+    private static final Pattern MBRAND_PATTERN = Pattern.compile("^[a-zA-Z]+[ a-zA-Z]*$", Pattern.CASE_INSENSITIVE);//starts with any alphabetic order a-z or A-Z and should only contains space
+    private static final Pattern MPRICE_PATTERN = Pattern.compile("^\\d{4}$");//4 digits
+    private static final Pattern MINGREDIENTS_PATTERN = Pattern.compile("^[a-zA-Z]+[ a-zA-Z]*$", Pattern.CASE_INSENSITIVE);//starts with any alphabetic order a-z or A-Z and should only contains space
+    private static final Pattern MMFGDATE_PATTERN = Pattern.compile("^2\\d{3}\\s+(January|February|March|April|May|June|July|August|September"
+            + "|October|November|December)$", Pattern.CASE_INSENSITIVE);
+    //starts with 2 and other 3  digits(years), \\s+ indicates space and should match the month names
+    private static final Pattern MEXPDATE_PATTERN = Pattern.compile("^2\\d{3}\\s+(January|February|March|April|May|June|July|August|September"
+            + "|October|November|December)$", Pattern.CASE_INSENSITIVE);
+    //starts with 2 and other 3 digits(years), \\s+ indicates space and should match the month names
     
-    private static final Pattern FID_PATTERN = Pattern.compile("^1\\d{3}$");
-    private static final Pattern FNAME_PATTERN = Pattern.compile("^[a-zA-Z]+[ a-zA-Z]*$");
-    private static final Pattern FINGREDIENTS_PATTERN = Pattern.compile("^[a-zA-Z]+[ a-zA-Z]*$", Pattern.CASE_INSENSITIVE);
-    private static final Pattern FQUANTITY_PATTERN = Pattern.compile("^\\d{1}$");
-    private static final Pattern FBRAND_PATTERN = Pattern.compile("^[a-zA-Z]+[ a-zA-Z]*$", Pattern.CASE_INSENSITIVE);
-    private static final Pattern FPRICE_PATTERN = Pattern.compile("^\\d{4}$");
-    private static final Pattern FMFGDATE_PATTERN = Pattern.compile("^\\d{4}\\s+(January|February|March|April|May|June|July|August|September|October|November|December)$");
-    private static final Pattern FEXPDATE_PATTERN = Pattern.compile("^\\d{4}\\s+(January|February|March|April|May|June|July|August|September|October|November|December)$");;
+    private static final Pattern FID_PATTERN = Pattern.compile("^1\\d{3}$"); //the digit should start with 1 and if followed by 3 digits
+    private static final Pattern FNAME_PATTERN = Pattern.compile("^[a-zA-Z]+[ a-zA-Z]*$"); //starts with any alphabetic order a-z or A-Z and should only contains space
+    private static final Pattern FINGREDIENTS_PATTERN = Pattern.compile("^[a-zA-Z]+[ a-zA-Z]*$", Pattern.CASE_INSENSITIVE); //starts with any alphabetic order a-z or A-Z and should only contains space
+    private static final Pattern FQUANTITY_PATTERN = Pattern.compile("^\\d{1}$"); //one digit only
+    private static final Pattern FBRAND_PATTERN = Pattern.compile("^[a-zA-Z]+[ a-zA-Z]*$", Pattern.CASE_INSENSITIVE); //starts with any alphabetic order a-z or A-Z and should only contains space
+    private static final Pattern FPRICE_PATTERN = Pattern.compile("^\\d{4}$"); //4 digits
+    private static final Pattern FMFGDATE_PATTERN = Pattern.compile("^2\\d{3}\\s+(January|February|March|April|May|June|July|August|September|"
+            + "October|November|December)$", Pattern.CASE_INSENSITIVE);
+     //starts with 2 and other 3 digits(years), \\s+ indicates space and should match the month names
+    private static final Pattern FEXPDATE_PATTERN = Pattern.compile("^2\\d{3}\\s+(January|February|March|April|May|June|July|August|September"
+            + "|October|November|December)$", Pattern.CASE_INSENSITIVE);
+     //starts with 2 and other 3  digits(years), \\s+ indicates space and should match the month names
     
     
     
     /**
-     * Validates if a string is null or empty.
+     * Validates if a string is null or empty for makeup.
      *
      * @param value
      * @ value the string to validate
@@ -68,7 +76,7 @@ public class ValidationUtil {
     /**
      * .
      *
-     * @param Mshade validate product material
+     * @param Mshade validate product shade
      * @return true if valid, otherwise false
      */
     public static boolean validateMShade(String Mshade) {
@@ -88,7 +96,7 @@ public class ValidationUtil {
     /**
      *.
      *
-     * @param Mbrand validate gold carats
+     * @param Mbrand validate brand
      * @return true if valid, otherwise false
      */
     public static boolean validateMBrand(String Mbrand) {
@@ -98,26 +106,41 @@ public class ValidationUtil {
     /**
      * 
      *
-     * @param price validate product stock
+     * @param Mprice validate product price
      * @return true if valid, otherwise false
      */
-    public static boolean validateMPrice(double price) {
-        return MPRICE_PATTERN.matcher(String.valueOf(price)).matches();
+    public static boolean validateMPrice(int Mprice) {
+        return MPRICE_PATTERN.matcher(String.valueOf(Mprice)).matches();
+    }
+    
+    /**
+     *
+     * @param ingredients
+     * @return true if valid, otherwise false
+     */
+    public static boolean validateMINGREDIENTS(String  ingredients) {
+        return MINGREDIENTS_PATTERN.matcher(String.valueOf(ingredients)).matches();
+        
     }
     
     /**
      * 
      *
-     * @param ingredients
-     
+     * @param Mmfgdate 
      * @return true if valid, otherwise false
      */
-    public static boolean validateMINGREDIENTS(String  ingredients) {
-        return MINGREDIENTS_PATTERN.matcher(String.valueOf(ingredients)).matches();
-    }
+    
     public static boolean validateMMFGDATE(String  Mmfgdate) {
         return MMFGDATE_PATTERN.matcher(String.valueOf(Mmfgdate)).matches();
     }
+    
+    
+    /**
+     * 
+     *
+     * @param Mexpdate
+     * @return true if valid, otherwise false
+     */
     
     
      public static boolean validateMEXPDATE(String  Mexpdate) {
@@ -125,7 +148,7 @@ public class ValidationUtil {
     }
      
      /**
-     * Validates if a string is null or empty.
+     * Validates if a string is null or empty for fragnance .
      *
      * @param value
      * @ value the string to validate
@@ -135,7 +158,7 @@ public class ValidationUtil {
     /**
      * 
      *
-     * @param Fid validate product code
+     * @param Fid validate product id
      * @return true if valid, otherwise false
      */
     public static boolean validateFId(int Fid) {
@@ -145,28 +168,27 @@ public class ValidationUtil {
     /**
      * 
      *
-     * @param name validate product name
+     * @param Fname validate product name
      * @return true if valid, otherwise false
      */
-    public static boolean validateFName(String name) {
-        return !isNullOrEmpty(name) && FNAME_PATTERN.matcher(name).matches();
+    public static boolean validateFName(String Fname) {
+        return !isNullOrEmpty(Fname) && FNAME_PATTERN.matcher(Fname).matches();
     }
 
     /**
-     * .
-    
+     * . 
      *
      * @param Fquantity
      * @return true if valid, otherwise false
      */
-    public static boolean FvalidateQuantity(int Fquantity) {
+    public static boolean validateFQuantity(int Fquantity) {
         return FQUANTITY_PATTERN.matcher(String.valueOf(Fquantity)).matches();
     }
     
     /**
      *.
      *
-     * @param Fbrand validate gold carats
+     * @param Fbrand validate brand
      * @return true if valid, otherwise false
      */
     public static boolean validateFBrand(String Fbrand) {
@@ -176,10 +198,10 @@ public class ValidationUtil {
     /**
      * 
      *
-     * @param Fprice validate product stock
+     * @param Fprice validate price
      * @return true if valid, otherwise false
      */
-    public static boolean validateFPrice(double Fprice) {
+    public static boolean validateFPrice(int Fprice) {
         return FPRICE_PATTERN.matcher(String.valueOf(Fprice)).matches();
     }
     
@@ -187,16 +209,29 @@ public class ValidationUtil {
      * 
      *
      * @param Fingredients
-     
      * @return true if valid, otherwise false
      */
     public static boolean validateFINGREDIENTS(String  Fingredients) {
         return FINGREDIENTS_PATTERN.matcher(String.valueOf(Fingredients)).matches();
     }
-    public static boolean validateFMGDATE(String  Fmfgdate) {
+    
+    /**
+     * 
+     *
+     * @param Fmfgdate
+     * @return true if valid, otherwise false
+     */
+    public static boolean validateFMGDATE(String Fmfgdate) {
         return FMFGDATE_PATTERN.matcher(String.valueOf(Fmfgdate)).matches();
     }
     
+    
+    /**
+     * 
+     *
+     * @param Fexpdate 
+     * @return true if valid, otherwise false
+     */
     
      public static boolean validateFEXPDATE(String  Fexpdate) {
         return FEXPDATE_PATTERN.matcher(String.valueOf(Fexpdate)).matches();
