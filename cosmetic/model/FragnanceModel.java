@@ -39,66 +39,130 @@ public class FragnanceModel {
         this.Fmfgdate = Fmfgdate;
         this.Fexpdate = Fexpdate;
     }
-    
+    /**
+     * @return The fragrance ID.
+     */
     public int getFid() {
         return Fid;
     }
+    
+    
+    /**
+     * @param Fid The fragrance ID to set.
+     */
 
     public void setFid(int Fid) {
         this.Fid = Fid;
     }
+    
+     /**
+     * @return The name of the fragrance.
+     */
 
     public String getFname() {
         return Fname;
     }
+    
+     /**
+     * @param Fname The name of the fragrance to set.
+     */
 
     public void setFname(String Fname) {
         this.Fname = Fname;
     }
+    
+    /**
+     * @return The ingredients of the fragrance.
+     */
 
     public String getFingredient() {
         return Fingredient;
     }
+    
+    /**
+     * @param Fingredient The ingredients of the fragrance to set.
+     */
 
     public void setFingredient(String Fingredient) {
         this.Fingredient = Fingredient;
     }
+    
+    /**
+     * @return The quantity of the fragrance.
+     */
 
     public int getFquantity() {
         return Fquantity;
     }
+    
+    /**
+     * @param Fquantity The quantity of the fragrance to set.
+     */
 
     public void setFquantity(int Fquantity) {
         this.Fquantity = Fquantity;
     }
+    
+    /**
+     * @return The brand of the fragrance.
+     */
 
     public String getFbrand() {
         return Fbrand;
     }
+    
+    /**
+     * @param Fbrand The brand of the fragrance to set.
+     */
 
     public void setFbrand(String Fbrand) {
         this.Fbrand = Fbrand;
     }
+    
+    /**
+     * @return The price of the fragrance.
+     */
 
     public double getFprice() {
         return Fprice;
     }
+    
+    /**
+     * @param Fprice The price of the fragrance to set.
+     */
+    
 
     public void setFprice(int Fprice) {
         this.Fprice = Fprice;
     }
+    
+    /**
+     * @return The manufacturing date of the fragrance.
+     */
 
     public String getFmfgdate() {
         return Fmfgdate;
     }
+    
+    /**
+     * @param Fmfgdate The manufacturing date of the fragrance to set.
+     */
 
     public void setFmfgdate(String Fmfgdate) {
         this.Fmfgdate = Fmfgdate;
     }
+    
+    /**
+     * @return The expiration date of the fragrance.
+     */
 
     public String getFexpdate() {
         return Fexpdate;
     }
+    
+    /**
+     * @param Fexpdate The expiration date of the fragrance to set.
+     */
 
     public void setFexpdate(String Fexpdate) {
         this.Fexpdate = Fexpdate;
