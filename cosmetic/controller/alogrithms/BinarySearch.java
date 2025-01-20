@@ -12,15 +12,27 @@ import java.util.List;
 /**
  *
  * LMUID: 23048679
-* @author ASUS1
+* @author Aaditi Ghimire 
  */
+
 public class BinarySearch {
+    
+     /**
+     * Searches for a MakeupModel in a sorted list by its name using binary search.
+     *
+     * @param searchValue The name of the makeup product to search for.
+     * @param makeupList  The sorted list of MakeupModel objects.
+     * @param low         The starting index of the search range.
+     * @param high        The ending index of the search range.
+     * @return The MakeupModel object if found, or null if not found.
+     */
     public MakeupModel searchByNameProduct (
         String searchValue,
         List<MakeupModel> makeupList,
         int low,
         int high
-    ) {
+    )
+    {
         if (high < low) {
             return null;
         }
@@ -39,11 +51,21 @@ public class BinarySearch {
     }
     
     public FragnanceModel searchByNameProductF (
+    /**
+     * Searches for a FragnanceModel in a sorted list by its name using binary search.
+     *
+     * @param searchValue The name of the fragrance product to search for.
+     * @param fragnanceList The sorted list of FragnanceModel objects.
+     * @param low The starting index of the search range.
+     * @param high The ending index of the search range.
+     * @return The FragnanceModel object if found, or null if not found.
+     */
         String searchValue,
         List<FragnanceModel> fragnanceList,
         int low,
         int high
-    ) {
+    ) 
+    {
         if (high < low) {
             return null;
         }
@@ -60,8 +82,5 @@ public class BinarySearch {
         }
         
     }
-    
-    
-  
-    
+        
 }
